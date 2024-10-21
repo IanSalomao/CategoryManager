@@ -3,11 +3,36 @@ import LoginPage from "./Pages/LoginPage.vue";
 import DashBoardPage from "./Pages/DashBoardPage.vue";
 import CategoryPage from "./Pages/CategoryPage.vue";
 import RegisterPage from "./Pages/RegisterPage.vue";
+// import axios from "axios";
 
-// Função para verificar se o usuário está autenticado
-function isAuthenticated() {
+async function isAuthenticated() {
   const token = localStorage.getItem("token");
-  return !!token;
+
+  if (!token) {
+    return false;
+  }
+
+  // try {
+  //   const response = await axios.get("http://127.0.0.1:8001/api/validate-token", {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //       "Content-Type": "application/json",
+  //     },
+  //   });
+
+  //   if (response.status === 200) {
+  //     return true;
+  //   } else {
+  //     localStorage.removeItem("token");
+  //     return false;
+  //   }
+  // } catch (error) {
+  //   console.error("Erro ao validar o token:", error);
+  //   localStorage.removeItem("token");
+  //   return false;
+  // }
+
+  return true;
 }
 
 const routes = [
@@ -43,8 +68,8 @@ const router = createRouter({
 });
 
 // Guardião de navegação para verificar autenticação antes de cada rota
-router.beforeEach((to, from, next) => {
-  const isLoggedIn = isAuthenticated();
+router.beforeEach(async (to, from, next) => {
+  const isLoggedIn = await isAuthenticated(); // Aguarda a verificação da autenticação
 
   // Se a rota exige autenticação e o usuário não está logado, redireciona para o login
   if (to.matched.some((route) => route.meta.requiresAuth) && !isLoggedIn) {
