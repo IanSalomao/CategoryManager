@@ -28,17 +28,17 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="categoryModalLabel">{{ isEditing ? "Editar" : "Adicionar" }} Categoria</h5>
+            <h5 class="modal-title" id="categoryModalLabel" style="color: black">{{ isEditing ? "Editar" : "Adicionar" }} Categoria</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="categoryName" class="form-label">Nome da Categoria</label>
-              <input type="text" class="form-control" id="categoryName" v-model="currentCategory.name" />
+              <label for="categoryName" class="form-label" style="color: black">Nome da Categoria</label>
+              <input type="text" class="form-control" id="categoryName" required v-model="currentCategory.name" style="color: black" />
             </div>
             <div class="mb-3">
-              <label for="categoryDescription" class="form-label">Descrição</label>
-              <textarea class="form-control" id="categoryDescription" v-model="currentCategory.description"></textarea>
+              <label for="categoryDescription" class="form-label" style="color: black">Descrição</label>
+              <textarea class="form-control" id="categoryDescription" v-model="currentCategory.description" style="color: black"></textarea>
             </div>
           </div>
           <div class="modal-footer">

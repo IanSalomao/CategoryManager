@@ -1,6 +1,6 @@
 <template>
   <NavBar />
-  <div class="container mt-5 mb-5 col-md-8">
+  <div class="container mt-5 mb-5 col-md-8" style="max-width: 800px">
     <h2>{{ this.$route.params.name }}</h2>
     <p>{{ this.$route.params.description }}</p>
     <button class="btn btn-primary btn-sm p-2 m-2" @click="editCategory(this.$route.params.name, this.$route.params.description)">Editar</button>

@@ -3,17 +3,17 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="subCategoryModalLabel">{{ isEditing ? "Editar" : "Adicionar" }} Subcategoria</h5>
+          <h5 class="modal-title" id="subCategoryModalLabel" style="color: black">{{ isEditing ? "Editar" : "Adicionar" }} Subcategoria</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="mb-3">
-            <label for="subCategoryName" class="form-label">Nome da Subcategoria</label>
-            <input type="text" class="form-control" id="subCategoryName" v-model="localSubCategory.name" />
+            <label for="subCategoryName" class="form-label" style="color: black">Nome da Subcategoria</label>
+            <input type="text" class="form-control" id="subCategoryName" v-model="localSubCategory.name" style="color: black" />
           </div>
           <div class="mb-3">
-            <label for="subCategoryDescription" class="form-label">Descrição</label>
-            <textarea class="form-control" id="subCategoryDescription" v-model="localSubCategory.description"></textarea>
+            <label for="subCategoryDescription" class="form-label" style="color: black">Descrição</label>
+            <textarea class="form-control" id="subCategoryDescription" v-model="localSubCategory.description" style="color: black"></textarea>
           </div>
         </div>
         <div class="modal-footer">
